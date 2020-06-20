@@ -54,7 +54,7 @@ class Main extends React.Component {
     super();
     this.speed = 100;
     this.rows = 30;
-    this.col = 50;
+    this.cols = 50;
 
     this.state = {
       generation: 0,
@@ -67,8 +67,25 @@ class Main extends React.Component {
     this.setState({
       gridFull: gridCopy
     })
-
   }
+  seed = () => {
+    let gridCopy = arrayClone(this.state.gridFull);
+    for (let i = 0; i < this.rows; i++) {
+      for(let j = 0; j < this.cols; j++) {
+        if (Math.floor(Math.random()* 4) === 1){
+          gridCopy[i][j] = true;
+        }
+      }
+    }
+    this.setState({
+      gridFull: gridCopy
+    });
+  }
+
+  componentDidMount() {
+    this.seed();
+  }
+
   render() {
     return (
       <div>
@@ -76,7 +93,7 @@ class Main extends React.Component {
         <Grid
           gridFull={this.state.gridFull}
           rows={this.rows}
-          col={this.cols}
+          cols={this.cols}
           selectBox={this.selectBox}
         />
         <h2>Generations: {this.state.generation}</h2>
