@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { ButtonToolbar, MenuItem, DropdownButton } from 'react-bootstrap';
+import { ButtonToolbar, DropdownButton, Dropdown } from 'react-bootstrap';
 
 class Box extends React.Component {
   selectBox = () => {
@@ -81,10 +81,11 @@ class Buttons extends React.Component {
             id="size-menu"
             onSelect={this.handleSelect}
           >
-            <MenuItem eventKey="1">20x10</MenuItem>
-            <MenuItem eventKey="2">50x30</MenuItem>
-            <MenuItem eventKey="3">70x50</MenuItem>
+            <Dropdown.Item eventKey="1">20x10</Dropdown.Item>
+            <Dropdown.Item eventKey="2">50x30</Dropdown.Item>
+            <Dropdown.Item eventKey="3">70x50</Dropdown.Item>
           </DropdownButton>
+
 
         </ButtonToolbar>
       </div>
@@ -214,6 +215,20 @@ class Main extends React.Component {
           cols={this.cols}
           selectBox={this.selectBox}
         />
+
+        <div>Created by Cambridge mathematician John Conway (26 December 1937 – 11 April 2020) </div>
+        <div>
+          <h2>The Rules!!</h2>
+          <h3>For a space that is 'populated':</h3>
+          <ul>
+          Each cell with one or no neighbors dies, as if by solitude.
+          Each cell with four or more neighbors dies, as if by overpopulation.
+          Each cell with two or three neighbors survives.
+          </ul>
+          <h3>For a space that is 'empty' or 'unpopulated'</h3>
+          <ul>Each cell with three neighbors becomes populated.
+          </ul>
+        </div>
         <h2>Generations: {this.state.generation}</h2>
       </div>
     );
