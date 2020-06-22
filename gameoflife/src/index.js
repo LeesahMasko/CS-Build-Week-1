@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { ButtonToolbar, DropdownButton, Dropdown } from 'react-bootstrap';
+import { ButtonToolbar, Button, ButtonGroup, DropdownButton, Dropdown } from 'react-bootstrap';
+import { Card, ListGroup } from 'react-bootstrap';
 
 class Box extends React.Component {
   selectBox = () => {
@@ -58,34 +59,35 @@ class Buttons extends React.Component {
     return (
       <div className="center">
         <ButtonToolbar>
-          <button className="btn btn-default" onClick={this.props.playButton}>
-            Play
-          </button>
-          <button className="btn btn-default" onClick={this.props.pauseButton}>
-            Pause
-          </button>
-          <button className="btn btn-default" onClick={this.props.clear}>
-            Clear
-          </button>
-          <button className="btn btn-default" onClick={this.props.slow}>
-            Slow
-          </button>
-          <button className="btn btn-default" onClick={this.props.fast}>
-            Fast
-          </button>
-          <button className="btn btn-default" onClick={this.props.seed}>
-            Seed
-          </button>
-          <DropdownButton
-            title="Grid Size"
-            id="size-menu"
-            onSelect={this.handleSelect}
-          >
-            <Dropdown.Item eventKey="1">20x10</Dropdown.Item>
-            <Dropdown.Item eventKey="2">50x30</Dropdown.Item>
-            <Dropdown.Item eventKey="3">70x50</Dropdown.Item>
-          </DropdownButton>
+          <ButtonGroup>
+            <Button className="btn btn-default" onClick={this.props.playButton}>
+              Play
+          </Button>
+            <Button className="btn btn-default" onClick={this.props.pauseButton}>
+              Pause
+          </Button>
+            <Button className="btn btn-default" onClick={this.props.clear}>
+              Clear
+          </Button>
+            <Button className="btn btn-default" onClick={this.props.slow}>
+              Slow
+          </Button>
+            <Button className="btn btn-default" onClick={this.props.fast}>
+              Fast
+          </Button>
+            <Button className="btn btn-default" onClick={this.props.seed}>
+              Seed
+          </Button>
 
+            <DropdownButton as={ButtonGroup}
+              title="Grid Size"
+              id="size-menu"
+              onSelect={this.handleSelect}>
+              <Dropdown.Item eventKey="1">20x10</Dropdown.Item>
+              <Dropdown.Item eventKey="2">50x30</Dropdown.Item>
+              <Dropdown.Item eventKey="3">70x50</Dropdown.Item>
+            </DropdownButton>
+          </ButtonGroup>
 
         </ButtonToolbar>
       </div>
@@ -149,15 +151,15 @@ class Main extends React.Component {
   }
 
   gridSize = (size) => {
-    switch (size){
+    switch (size) {
       case "1":
         this.cols = 20;
         this.rows = 10;
-      break;
+        break;
       case "2":
         this.cols = 50;
         this.rows = 30;
-      break;
+        break;
       default:
         this.cols = 70;
         this.rows = 50;
@@ -215,19 +217,37 @@ class Main extends React.Component {
           cols={this.cols}
           selectBox={this.selectBox}
         />
-
-        <div>Created by Cambridge mathematician John Conway (26 December 1937 – 11 April 2020) </div>
         <div>
-          <h2>The Rules!!</h2>
-          <h3>For a space that is 'populated':</h3>
-          <ul>
-          Each cell with one or no neighbors dies, as if by solitude.
-          Each cell with four or more neighbors dies, as if by overpopulation.
-          Each cell with two or three neighbors survives.
-          </ul>
-          <h3>For a space that is 'empty' or 'unpopulated'</h3>
-          <ul>Each cell with three neighbors becomes populated.
-          </ul>
+
+          <div className="center">
+          <Card style={{ width: '30rem' }}>
+              <Card.Img variant="top" src="https://static01.nyt.com/images/2020/04/18/obituaries/14Conway1/merlin_171560415_a372e14d-1b58-4837-bc68-e474efc320a0-jumbo.jpg?quality=90&auto=webp" />
+              <Card.Body>
+                <Card.Title>Inventor of the Game of Life</Card.Title>
+                <Card.Text>
+                English-born Cambridge (and later Princeton) mathematician John Conway.  (26 December 1937 – 11 April 2020)
+                </Card.Text>
+                <Button variant="primary" href="https://www.economist.com/obituary/2020/04/23/john-conway-died-on-april-11th">Learn More about Professor John Conway</Button>
+              </Card.Body>
+            </Card>
+            <h2>The Rules!!</h2>
+            <Card style={{ width: '30rem' }}>
+              <Card.Header>For a space that is 'populated':</Card.Header>
+              <ListGroup variant="flush">
+                <ListGroup.Item>Each cell with one or no neighbors dies, as if by solitude.</ListGroup.Item>
+                <ListGroup.Item>Each cell with four or more neighbors dies, as if by overpopulation.</ListGroup.Item>
+                <ListGroup.Item>Each cell with two or three neighbors survives.</ListGroup.Item>
+              </ListGroup>
+            </Card>
+
+            <Card style={{ width: '30rem' }}>
+              <Card.Header>For a space that is 'empty' or 'unpopulated':</Card.Header>
+              <ListGroup variant="flush">
+                <ListGroup.Item>Each cell with three neighbors becomes populated.</ListGroup.Item>
+              </ListGroup>
+            </Card>
+
+          </div>
         </div>
         <h2>Generations: {this.state.generation}</h2>
       </div>
