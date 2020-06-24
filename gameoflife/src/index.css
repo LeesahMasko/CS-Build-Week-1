@@ -27,19 +27,22 @@ body {
   background: #00CCFF;
 }
 .buttons_bar {
-  border: 5px solid #fff12e;
+  /* border: 5px solid #fff12e; */
   display: flex;
   justify-content: center;
 }
 .main-game {
   display: flex;
   justify-content: center;
+  border: 5px solid #fff12e;
+  box-shadow: 0px 0px 20px white;
+  padding: 20px;
 }
 .centerInfo {
   margin: auto;
   display: table;
   margin-top: 10px;
-  border: 5px solid #fff12e;
+  /* border: 5px solid #fff12e; */
   box-shadow: 0px 0px 20px white;
 }
 .game_and_buttons {
@@ -48,8 +51,8 @@ body {
   align-items: center;
   justify-content: center;
   margin: auto;
-  border: 5px solid #fff12e;
-  box-shadow: 0px 0px 20px white;
+  /* border: 5px solid #fff12e; */
+  box-shadow: 0px 0px 20px #fff12e;
 }
 
 .grid {

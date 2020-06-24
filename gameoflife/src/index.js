@@ -230,9 +230,10 @@ class Main extends React.Component {
           <Card style={{ width: '30rem' }}>
             <Card.Img variant="top" src="https://static01.nyt.com/images/2020/04/18/obituaries/14Conway1/merlin_171560415_a372e14d-1b58-4837-bc68-e474efc320a0-jumbo.jpg?quality=90&auto=webp" />
             <Card.Body>
-              <Card.Title>Inventor of the Game of Life</Card.Title>
+              <Card.Title>
+                Inventor of the Game of Life</Card.Title>
               <Card.Text>
-                English-born Cambridge (and later Princeton) mathematician John Conway.  (26 December 1937 – 11 April 2020)
+                English-born Cambridge mathematician John Conway.  (26 December 1937 – 11 April 2020)
                 </Card.Text>
               <Button variant="primary" href="https://www.economist.com/obituary/2020/04/23/john-conway-died-on-april-11th">Learn More about Professor John Conway</Button>
             </Card.Body>
@@ -241,16 +242,16 @@ class Main extends React.Component {
           <Card style={{ width: '30rem' }}>
             <Card.Header>For a space that is 'populated':</Card.Header>
             <ListGroup variant="flush">
-              <ListGroup.Item>Each cell with one or no neighbors dies, as if by solitude.</ListGroup.Item>
-              <ListGroup.Item>Each cell with four or more neighbors dies, as if by overpopulation.</ListGroup.Item>
-              <ListGroup.Item>Each cell with two or three neighbors survives.</ListGroup.Item>
+              <ListGroup.Item> - Each cell with one or no neighbors dies, as if by solitude.</ListGroup.Item>
+              <ListGroup.Item> - Each cell with four or more neighbors dies, as if by overpopulation.</ListGroup.Item>
+              <ListGroup.Item> - Each cell with two or three neighbors survives.</ListGroup.Item>
             </ListGroup>
           </Card>
 
           <Card style={{ width: '30rem' }}>
             <Card.Header>For a space that is 'empty' or 'unpopulated':</Card.Header>
             <ListGroup variant="flush">
-              <ListGroup.Item>Each cell with three neighbors becomes populated.</ListGroup.Item>
+              <ListGroup.Item> - Each cell with three neighbors becomes populated.</ListGroup.Item>
             </ListGroup>
           </Card>
 
