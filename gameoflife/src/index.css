@@ -2,7 +2,7 @@
   background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/squares.png)
 } */
 body {
-  background-color: #32a14f;
+  background-color: #8abf2e;
 }
 
 .box {
@@ -34,7 +34,8 @@ body {
 .main-game {
   display: flex;
   justify-content: center;
-  border: 5px solid #fff12e;
+  flex-wrap: wrap-reverse;
+  /* border: 5px solid #fff12e; */
   box-shadow: 0px 0px 20px white;
   padding: 20px;
 }
@@ -59,7 +60,7 @@ body {
   width: 150px;
   line-height: 0;
   margin: auto;
-  box-shadow: 0px 0px 20px #fff12e;
+  /* box-shadow: 0px 0px 20px #fff12e; */
   margin-top: 20px;
 
 }
