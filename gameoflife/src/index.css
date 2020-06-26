@@ -2,6 +2,9 @@
   background-image: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/squares.png)
 } */
 body {
+  display: flex;
+  width: 100%;
+  align-items: center;
   background-color: #8abf2e;
 }
 
@@ -29,35 +32,37 @@ body {
 .buttons_bar {
   /* border: 5px solid #fff12e; */
   display: flex;
-  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px white;
 }
 .main-game {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   /* border: 5px solid #fff12e; */
   box-shadow: 0px 0px 20px white;
   padding: 20px;
 }
 .centerInfo {
   margin: auto;
-  display: table;
+  /* display: table; */
   margin-top: 10px;
   /* border: 5px solid #fff12e; */
-  box-shadow: 0px 0px 20px white;
+  /* box-shadow: 0px 0px 20px white; */
 }
 .game_and_buttons {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: auto;
   /* border: 5px solid #fff12e; */
-  box-shadow: 0px 0px 20px #fff12e;
+  box-shadow: 0px 0px 150px #fff12e;
 }
 
 .grid {
-  width: 150px;
+  width: 90%;
   line-height: 0;
   margin: auto;
   /* box-shadow: 0px 0px 20px #fff12e; */
@@ -69,8 +74,9 @@ h1, h2, h3, h4 {
   color: white;
   margin: auto;
   text-align: center;
-  width: 50%;
+  width: 90%;
   margin-top: 10px;
+  margin-bottom: 2px;
 }
 
 h4 {
